@@ -1,0 +1,28 @@
+==================================================
+ESP32 + L298N ROBOT CAR COMPLETE WIRING CONNECTIONS
+==================================================
+
+1. POWER & GROUND CONNECTIONS
+--------------------------------------------------
+Battery (+) Positive         -> L298N 12V Screw Terminal
+Battery (-) Negative         -> L298N GND Screw Terminal
+ESP32 GND                    -> L298N GND Screw Terminal (Shared Ground)
+ESP32 VN (or 5V)             -> L298N +5V Screw Terminal
+
+2. MOTOR OUTPUT CONNECTIONS
+--------------------------------------------------
+Left Motor Wire 1            -> L298N OUT1 Screw Terminal
+Left Motor Wire 2            -> L298N OUT2 Screw Terminal
+Right Motor Wire 1           -> L298N OUT3 Screw Terminal
+Right Motor Wire 2           -> L298N OUT4 Screw Terminal
+
+3. LOGIC & PWM CONTROL CONNECTIONS (Headers)
+--------------------------------------------------
+(Note: Remove both black jumper caps from ENA and ENB)
+
+ESP32 D14 (GPIO 14)          -> L298N ENA (Left Motor Speed PWM)
+ESP32 D27 (GPIO 27)          -> L298N IN1 (Left Motor Forward)
+ESP32 D26 (GPIO 26)          -> L298N IN2 (Left Motor Backward)
+ESP32 D25 (GPIO 25)          -> L298N IN3 (Right Motor Forward)
+ESP32 D33 (GPIO 33)          -> L298N IN4 (Right Motor Backward)
+ESP32 D32 (GPIO 32)          -> L298N ENB (Right Motor Speed PWM)
